@@ -164,8 +164,3 @@ if state then _G.on = true while _G.on do wait() game:GetService("ReplicatedStor
 Tab8Section:NewTextBox("Amount","Enter money",function(txt) _G.money = tonumber(txt) end)
 Tab8Section:NewButton("Redeem Money","Gives typed money",function() game:GetService("ReplicatedStorage").fewjnfejwb3:FireServer(_G.money or 0) end)
 
-local Collect=false
-Tab5Section:NewToggle("Auto Collect Cash","",function(v) Collect=v if v then task.spawn(function() while Collect do task.wait() game:GetService("ReplicatedStorage").RemoteEvent:FireServer("RequestCollectCash") end end) end end)
-
-local Button=false
-Tab5Section:NewToggle("Auto Buys Buttons","Auto Buys Buttons",function(v) Button=v if v then task.spawn(function() while Button do task.wait() game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ButtonTriggeredLocally",workspace.Tycoonbruh199121.Floor1.Contents.ButtonWalls,workspace.Tycoonbruh199121.Floor1.Contents.ButtonWalls.ButtonData) end end) end end)
