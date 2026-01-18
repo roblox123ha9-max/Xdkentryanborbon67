@@ -166,7 +166,3 @@ Tab8Section:NewButton("Redeem Money","Gives typed money",function() game:GetServ
 
 Tab2Section:NewToggle("auto buy Box Toy Egg", "auto buys Box Toy Egg", function(state) if state then _G.on = true while _G.on do wait() local args = { [1] = "Box Toy Egg" } 
 game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args)) end else _G.on = false end end)
-
-Tab1Section:NewButton("Speed Changer i dont think it will work for pop it trading","set speed to 200",function()
-game.LocalPlayer.Humanoid.Walkspeed = 200
-end)
